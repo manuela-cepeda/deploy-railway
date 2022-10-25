@@ -1,0 +1,57 @@
+<div class="p-3 d-flex bg-light justify-content-between">
+  <h2  id="userName"> Bienvenido {{this.user.name}}</h2>
+  <button class=" btn btn-primary" id="logout">Log Out</button>
+</div>
+<div class="p-3 row">
+  <div class="col">
+
+  <h2 class="my-3">Agregar Producto</h2>
+    <form id="productForm">
+       <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input id="title"name="title" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Prices</label>
+        <input id="price" name="price" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="thumbnail" class="form-label" >Thumbnail</label>
+        <input type="file" id="thumbnail" name="thumbnail" class="form-control" required>
+      </div>
+      <input type="submit" class="btn btn-primary">      
+    </form>
+  <h2 class="my-3"> Productos</h2>
+   <table class="table mb-3">
+      <thead>
+         <tr>
+         <th scope="col">Title</th>
+         <th scope="col">Price</th>
+         <th scope="col">Thumbnail</th>  
+      </tr>
+   </thead>
+   <tbody id="products">
+
+   </tbody>    
+</table>
+  </div>
+  <div class="col">
+
+  <h2 class="my-3">Chat</h2>
+    
+    <form id="formChat" class="mb-3">      
+        <div class="mb-3">
+          <label   class="form-label" >Chatbox //en proceso </label>
+            <input type="text" id="texto" placeholder="Cuéntanos algo..." class="form-control">
+        </div>
+        <input type="submit" value="Enviar" class="btn btn-primary">
+    </form>
+    <div id="messages" class=" p-3"></div>
+</div>
+  </div>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="js/chat.js"> </script>
+<script src="js/products.js"></script> 
+<script src="js/logout.js"></script> 

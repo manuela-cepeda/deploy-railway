@@ -1,0 +1,17 @@
+<ul>
+    <li>sistema operativo: {{this.info.platform}}</li>
+    <li>version de Node: {{this.info.version}}</li>
+    <li>memoria total reservada: {{this.info.memoryUsage}}</li>
+    <li>path de ejecución: {{this.info.execPath}}</li>
+    <li>process id: {{this.info.pid}}</li>
+    <li>carpeta del proyecto: {{this.info.cwd}}</li>
+    <li>argumentos de entrada: 
+        <ul>
+            {{#each this.info.argv}}
+            <li> {{this}} </li>
+            {{/each}}
+        </ul>
+
+    </li>
+ 
+</ul>
