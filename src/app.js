@@ -19,7 +19,8 @@ import config from './config/config.js'
 
 //inicializamos express y websocket
 const app = express();
-const PORT = config.app.PORT;
+// const PORT = config.app.PORT;
+const PORT = process.env.PORT || 8080 
 const server = app.listen(PORT, ()=>{
     console.log(`listening on port ${PORT}`);
 });
@@ -30,7 +31,8 @@ app.use(express.static(__dirname+'/public'));
 //session
 app.use(session({
 	store: MongoStore.create({
-		mongoUrl: config.mongo.MONGO_URL, 
+		// mongoUrl: config.mongo.MONGO_URL, 
+		mongoUrl: process.env.MONGO_URL, 
 		ttl:600, 
 	}),
 	secret: "C0derSessi0n3000",
