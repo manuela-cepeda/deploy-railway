@@ -5,7 +5,7 @@ logout?.addEventListener('click', async (e)=>{
     const response  = await fetch('api/sessions/logout')
     .then(result=>result.json())
     console.log(response)
-    if(response.success) location.assign('/logout');
+    if(response.success) location.assign('/home');
 
     
 })
